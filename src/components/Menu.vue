@@ -11,7 +11,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <router-link class="nav-link active" aria-current="page"
-                            to="/public/camera.html" target="_blank">Camera</router-link>
+                            to="/camera" target="_self">Camera</router-link>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,11 +63,8 @@
 <script>
 export default {
     name: 'Menu-bar',
-    data() {
-        return {
-            camera: '/public/camera.html'
-        }
-    }
+ 
+
 }
 </script>
 <style>

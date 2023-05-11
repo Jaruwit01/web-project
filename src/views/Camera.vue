@@ -1,5 +1,5 @@
-<template >
-        <div class="container main">
+<template>
+    <div class="container main">
         <div class="container">
             <div class="card mt-4 " id="card-item" style="width: 18rem;">
                 <img src="/Befor Login/camera Page/pic/camera/20221104_032921_sony-a7r-v-1.jpg" alt="Mirrorless-camera">
@@ -33,10 +33,35 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
-  name: "card-component",
-};
+  name: 'Camera-page',
+  components: {
+  }
+}
 </script>
-<style lang="">
+<style>
+#logo-img {
+    width: 3.0rem;
+    margin: 0 auto;
+}
+* {
+    font-family: 'Chivo Mono', monospace;
+    padding: 0;
+    box-sizing: border-box;
+}
+#card-item img{
+    
+    width: 10rem;
+}
+#card-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0; 
+
+
+}
+
 </style>

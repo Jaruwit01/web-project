@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary menu">
         <div class="container-fluid">
             <a class="navbar-brand" href="../public/index.html"><img src="../assets/logo.png"
                     alt="logo-img" id="logo-img"/></a>
@@ -45,10 +45,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                        <router-link to="/about" class="nav-link active" aria-current="page" href="#">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Login/login.html">Sing In</a>
+                        <router-link class="nav-link" to="/member" href="/Login/login.html">Sing In</router-link>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -67,12 +67,13 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
     #logo-img {
     width: 3.0rem;
     margin: 0 auto;
     }
-    *{
-        font-size: 1.2rem;
+    .navbar.navbar-expand-lg.bg-body-tertiary.menu {
+        font-size: 1.063em;
     }
+
 </style>

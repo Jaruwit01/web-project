@@ -17,7 +17,7 @@
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">DSLR</a></li>
+                            <li><router-link to="/DSL-Camera" class="dropdown-item" href="#">DSLR</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -48,7 +48,7 @@
                         <router-link to="/about" class="nav-link active" aria-current="page" href="#">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/member" href="/Login/login.html">Sing In</router-link>
+                        <router-link class="nav-link" to="/member" href="#">Sing In</router-link>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">

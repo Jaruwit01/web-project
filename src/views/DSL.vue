@@ -1,6 +1,6 @@
 <template>
-<div>
-    <header>Camera All</header>
+  <div>
+    <header>DSL Camera</header>
     <Cards>
       <template v-slot:pictur>
         <img
@@ -27,25 +27,23 @@
     </Cards>
   </div>
 </template>
-
 <script>
-import Cards from '../components/Cards.vue';
+import Cards from "../components/Cards.vue";
 export default {
-    name: 'Camera-page',
-    components: {
-        Cards
-    }
-}
+  name: "DSL-page",
+  components: {
+    Cards,
+  },
+};
 </script>
 <style scoped>
 header {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem;
 }
 #card-item img {
-
-    width: 10rem;
+  width: 10rem;
 }
 </style>

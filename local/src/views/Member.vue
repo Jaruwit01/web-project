@@ -1,6 +1,5 @@
 <template >
-
-    <div>
+ 
         <div class="container main " id="container-sign-in">
         <div class="text-dark- fw-bold fs-1 text-center mt-4 mb-1">
             Sing In to Camera Box
@@ -17,81 +16,28 @@
                         <input type="password" id="pass" class=" form-control" placeholder="Enter your password .....">
                     </div>
                     <div class="mb-3">
-                        <input type="checkbox" id="agree-check" class=" form-check-input">
+                        <input type="checkbox" id="agree-check" class=" form-check-input me-2">
                         <label for="agree-check" class="form-check-label" id="check-label">remember password</label>
                     </div>
-                    <button type="submit" class="btn btn-light rounded-3 border" id="btn-sign-in" formaction="/home/page.html">SIGN IN</button>
+                    <button type="submit" class="btn btn-light rounded-3 border " id="btn-sign-in" formaction="/home/page.html">SIGN IN</button>
                 </form>
             </div>
         </div>
         <!-- Button trigger modal -->
-        <p class="text-center border border-dark rounded-3 p-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        <p class="text-center border border-dark rounded-3 p-2" 
             id="create-box">
-            New to Camera Box?<span class="text-success"> Create account</span>
+            New to Camera Box?<router-link to="/create" class="text-success"> Create account</router-link>
         </p>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container main" id="container-signUp">
-                            <div class="text-dark- fw-bold fs-1 text-center mt-4 mb-1">
-                                Sing In to Camera Box
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">What should we call you?</label>
-                                            <input type="text" id="name" class=" form-control"
-                                                placeholder="what your name .....">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">Username</label>
-                                            <input type="text" id="usernmae" class=" form-control"
-                                                placeholder="Enter your username .....">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" id="email" class=" form-control"
-                                                placeholder="Enter your email .....">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="pass" class="form-label">Password</label>
-                                            <input type="password" id="pass" class=" form-control"
-                                                placeholder="Enter your password .....">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="pass" class="form-label">Confirm Password</label>
-                                            <input type="password" id="pass" class=" form-control"
-                                                placeholder="confirm password .....">
-                                        </div>
-                                        <div class="mb-3">
-                                            <input type="checkbox" id="agree-check" class=" form-check-input">
-                                            <label for="agree-check" class="form-check-label" id="label-sign-in">I agree to the terms and
-                                                conditions? <a href="#" class=" text-success">agreement</a></label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
 
-    </div>
 </template>
 <script>
 export default {
     name: "Member-Page",
+
 
 }
 </script>

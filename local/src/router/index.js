@@ -28,7 +28,13 @@ const routes = [
     path:'/DSL-Camera',
     name:'DSL-Camera',
     component: () => import(/* webpackChunkName: "about" */ '../views/DSL.vue')
+  },
+  {
+    path:'/create',
+  name:'create',
+  component: () => import(/* webpackChunkName: "about" */ '../views/CreateAccount.vue')
   }
+  
 ]
 
 const router = new VueRouter({

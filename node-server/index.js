@@ -7,4 +7,6 @@ const port = 3000;
 // app.listen(port, () => console.log(`Example app listening on port ${port}!`)); 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.get('/api/', (req, res) => {});
+app.get('/api/', (req, res) => {
+    
+});

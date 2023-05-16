@@ -5,7 +5,7 @@
     </div>
     <div class="card" id="card-sign-up">
       <div class="card-body">
-        <form>
+        <form ref="form" @submit="Create_account">
           <div class="mb-3">
             <label for="name" class="form-label"
               >What should we call you?</label
@@ -13,17 +13,21 @@
             <input
               type="text"
               id="name"
+              name="name"
               class="form-control"
               placeholder="what your name ....."
+              
             />
           </div>
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input
               type="text"
-              id="usernmae"
+              id="username"
+              name="username"
               class="form-control"
               placeholder="Enter your username ....."
+             
             />
           </div>
           <div class="mb-3">
@@ -31,26 +35,32 @@
             <input
               type="email"
               id="email"
+              name="email"
               class="form-control"
               placeholder="Enter your email ....."
+              
             />
           </div>
           <div class="mb-3">
             <label for="pass" class="form-label">Password</label>
             <input
               type="password"
-              id="pass"
+              id="password"
+              name="password"
               class="form-control"
               placeholder="Enter your password ....."
+              
             />
           </div>
           <div class="mb-3">
             <label for="pass" class="form-label">Confirm Password</label>
             <input
               type="password"
-              id="pass"
+              id="confirm_password"
+              name="confirm_password"
               class="form-control"
               placeholder="confirm password ....."
+              
             />
           </div>
           <div class="mb-3">
@@ -61,30 +71,30 @@
             >
           </div>
           <div id="btn">
-            <router-link to="/member">
+            <!-- <router-link to="/member"> -->
               <button
-                type="button"
+                
                 class="btn btn-secondary me-3"
                 id="cancel-btn"
               >
                 Cancel
               </button>
-            </router-link>
+            <!-- </router-link> -->
 
-            <router-link to="/member">
+            <!-- <router-link to="/member"> -->
               <button
-                type="button"
+                
                 class="btn btn-success me-3"
                 id="create-btn"
-                @click="Create_account"
               >
                 Create
               </button>
-            </router-link>
+            <!-- </router-link> -->
           </div>
         </form>
       </div>
     </div>
+    <div v-html="account"></div>
   </div>
 </template>
 <script>
@@ -92,24 +102,40 @@ export default {
   name: "CreateAccount",
   data() {
     return {
-      name: "",
-      username: "",
-      email: "",
-      password: "",
-      confirm_password: "",
-      agree: false,
-    };
-  },
-  methods: {
-    Create_account() {
-      fetch("/api/create")
-        .then((res) => res.text())
-        .then((result) => (this.name = result))
-        .catch((err) => console.log(err));
+      account:{
+        name: "",
+        username: "",
+        email: "",
+        password: "",
+        confirm_password: "",
+        agree: false,
+      }
+      }
     },
-  },
-};
+  methods: {
+    Create_account(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const formEnt = Object.fromEntries(formData.entries());
+      fetch('/api/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formEnt),
+      })
+      .then(response => response.text())
+      .then(result => {
+        this.account = result;
+        event.target.reset();
+  
+      })
+      .catch(err => alert(err))
+  }
+}
+}
 </script>
+
 <style scoped>
 #card-sign-up,
 #create-box {
@@ -136,7 +162,7 @@ export default {
 }
 
 #username,
-#pass {
+#password,#confirm_password {
   max-width: 500px;
   height: 2.5rem;
   border: 1px solid #ccc;

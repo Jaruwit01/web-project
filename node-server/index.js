@@ -1,16 +1,16 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const express = require('express')
+const app = express()
+const port = 3000
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+app.use(express.static('public'))
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.post('/api/create', (req, res) => {
-  let name = req.body.name || '';
-  let username = req.body.username || '';
-  let email = req.body.email || '';
-  let password = req.body.password || '';
-  let confirm_password = req.body.confirm_password || '';
+app.post('/api/create', (request, response) => {
+  let name = request.body.name || '';
+  let username = request.body.username || '';
+  let email = request.body.email || '';
+  let password = request.body.password || '';
+  let confirm_password = request.body.confirm_password || '';
 
   data = `
     <h1 class="text-center">Account value</h1>
@@ -38,7 +38,7 @@ app.post('/api/create', (req, res) => {
     </table>
   `;
 
-  res.send(data);
+  response.send(data);
 });
 
 app.listen(port, () => {

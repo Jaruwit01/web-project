@@ -102,38 +102,29 @@ export default {
   name: "CreateAccount",
   data() {
     return {
-      account:{
-        name: "",
-        username: "",
-        email: "",
-        password: "",
-        confirm_password: "",
-        agree: false,
-      }
+      account:''
       }
     },
-  methods: {
-    Create_account(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      const formEnt = Object.fromEntries(formData.entries());
-      fetch('/api/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formEnt),
-      })
-      .then(response => response.text())
-      .then(result => {
-        this.account = result;
-        event.target.reset();
-  
-      })
-      .catch(err => alert(err))
+    methods: {
+        form_submit(event) {
+            event.preventDefault()
+            const formData = new FormData(event.target)
+            const formEnt = Object.fromEntries(formData.entries())
+
+            fetch('/api/create', {
+                method: 'POST',
+                body: JSON.stringify(formEnt), 
+                headers: {'Content-Type':'application/json'}
+            })
+            .then(response => response.text())
+            .then(result => {
+                this.account = result
+                event.target.reset()
+            })	
+            .catch(err => alert(err))
+        }
+    }
   }
-}
-}
 </script>
 
 <style scoped>

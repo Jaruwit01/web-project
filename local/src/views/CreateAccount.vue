@@ -106,7 +106,7 @@ export default {
       }
     },
     methods: {
-        form_submit(event) {
+        Create_account(event) {
             event.preventDefault()
             const formData = new FormData(event.target)
             const formEnt = Object.fromEntries(formData.entries())

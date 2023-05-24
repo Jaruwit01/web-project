@@ -11,6 +11,7 @@ app.post('/api/create', (request, response) => {
   let email = request.body.email || '';
   let password = request.body.password || '';
   let confirm_password = request.body.confirm_password || '';
+  let agree = request.body.agree || "";
 
   data = `
     <h1 class="text-center">Account value</h1>
@@ -34,6 +35,10 @@ app.post('/api/create', (request, response) => {
       <tr>
         <td>Confirm Password</td>
         <td>${confirm_password}</td>
+      </tr>
+      <tr>
+        <td>Agree</td>
+        <td>${agree}</td>
       </tr>
     </table>
   `;

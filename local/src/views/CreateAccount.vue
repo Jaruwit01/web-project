@@ -7,19 +7,21 @@
       <div class="card-body">
         <form ref="form" @submit="Create_account">
           <div class="mb-3">
-            <label for="name" class="form-label"
-              >What should we call you?</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-control"
-              placeholder="what your name ....."
-              
-            />
+            <div class="form-group was-validated">
+              <label for="name" class="form-label"
+                >What should we call you?</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="what your name ....."
+              />
+            </div>
           </div>
           <div class="mb-3">
+            <div class="form-group was-validated"></div>
             <label for="username" class="form-label">Username</label>
             <input
               type="text"
@@ -27,68 +29,73 @@
               name="username"
               class="form-control"
               placeholder="Enter your username ....."
-             
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter your email ....."
-              
-            />
+            <div class="form-group was-validated">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                pale
+                placeholder="Enter your email ....."
+                required
+              />
+            </div>
           </div>
           <div class="mb-3">
-            <label for="pass" class="form-label">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-control"
-              placeholder="Enter your password ....."
-              
-            />
+            <div class="form-group was-validated">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter your password ....."
+              />
+            </div>
           </div>
           <div class="mb-3">
-            <label for="pass" class="form-label">Confirm Password</label>
-            <input
-              type="password"
-              id="confirm_password"
-              name="confirm_password"
-              class="form-control"
-              placeholder="confirm password ....."
-              
-            />
+            <div class="form-group was-validated">
+              <label for="confirm_password" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                class="form-control"
+                placeholder="confirm password ....."
+              />
+            </div>
           </div>
           <div class="mb-3">
-            <input type="checkbox" id="agree-check" class="form-check-input" />
-            <label for="agree-check" class="form-check-label" id="label-sign-up"
-              >I agree to the terms and conditions?
-              <a href="#" class="text-success">agreement</a></label
-            >
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                id="agree-check"
+                class="form-check-input"
+                value=""
+                checked
+              />
+              <label
+                for="agree-check"
+                class="form-check-label"
+                id="label-sign-up"
+                >I agree to the terms and conditions?
+                <a href="#" class="text-success">agreement</a></label
+              >
+            </div>
           </div>
           <div id="btn">
             <!-- <router-link to="/member"> -->
-              <button
-                
-                class="btn btn-secondary me-3"
-                id="cancel-btn"
-              >
-                Cancel
-              </button>
+            <button class="btn btn-secondary me-3" id="cancel-btn">
+              Cancel
+            </button>
             <!-- </router-link> -->
 
             <!-- <router-link to="/member"> -->
-              <button
-                
-                class="btn btn-success me-3"
-                id="create-btn"
-              >
-                Create
-              </button>
+            <button class="btn btn-success me-3" id="create-btn">Create</button>
             <!-- </router-link> -->
           </div>
         </form>
@@ -102,29 +109,29 @@ export default {
   name: "CreateAccount",
   data() {
     return {
-      account:''
-      }
-    },
-    methods: {
-        Create_account(event) {
-            event.preventDefault()
-            const formData = new FormData(event.target)
-            const formEnt = Object.fromEntries(formData.entries())
+      account: "",
+    };
+  },
+  methods: {
+    Create_account(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const formEnt = Object.fromEntries(formData.entries());
 
-            fetch('/api/create', {
-                method: 'POST',
-                body: JSON.stringify(formEnt), 
-                headers: {'Content-Type':'application/json'}
-            })
-            .then(response => response.text())
-            .then(result => {
-                this.account = result
-                event.target.reset()
-            })	
-            .catch(err => alert(err))
-        }
-    }
-  }
+      fetch("/api/create", {
+        method: "POST",
+        body: JSON.stringify(formEnt),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => response.text())
+        .then((result) => {
+          this.account = result;
+          event.target.reset();
+        })
+        .catch((err) => alert(err));
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -153,7 +160,8 @@ export default {
 }
 
 #username,
-#password,#confirm_password {
+#password,
+#confirm_password {
   max-width: 500px;
   height: 2.5rem;
   border: 1px solid #ccc;

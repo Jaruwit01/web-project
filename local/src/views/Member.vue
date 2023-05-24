@@ -7,17 +7,29 @@
         <div class="card" id="card-sign-in">
             <div class="card-body">
                 <form>
+                    
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" id="username" class=" form-control" placeholder="Enter your username .....">
+                        <div class="form-group was-validated">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="text" id="email" class=" form-control" placeholder="Enter your username ....." required></div>
+                        <div class="invalid-feedback">
+                            Please enter your email.
+                        </div>
                     </div>
                     <div class="mb-3">
+                        <div class="form-group was-validated">
                         <label for="pass" class="form-label">Password</label>
-                        <input type="password" id="pass" class=" form-control" placeholder="Enter your password .....">
+                        <input type="password" id="pass" class=" form-control" placeholder="Enter your password ....." required></div>
+                        <div class="invalid-feedback">
+                            Please enter your password.
+                    </div>
                     </div>
                     <div class="mb-3">
+                        <div class="form-group form-check">
                         <input type="checkbox" id="agree-check" class=" form-check-input me-2">
                         <label for="agree-check" class="form-check-label" id="check-label">remember password</label>
+                        </div>
+                        
                     </div>
                     <button type="submit" class="btn btn-light rounded-3 border " id="btn-sign-in" formaction="/home/page.html">SIGN IN</button>
                 </form>

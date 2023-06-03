@@ -48,7 +48,7 @@
                         <router-link to="/about" class="nav-link active" aria-current="page" href="#">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/member" href="#">Sing In</router-link>
+                        <router-link class="nav-link" to="/signIn" href="#">Sing In</router-link>
                     </li>
                 </ul>
                 <form class="d-flex" role="search" >

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/Camera.vue'
+import SignUp from "../views/CreateAccount.vue"
 
 Vue.use(VueRouter)
 
@@ -20,8 +21,7 @@ const routes = [
   },
 
   {
-    path: '/member',
-    name: 'member',
+    path: '/signIn',
     component: () => import(/* webpackChunkName: "about" */ '../views/Member.vue')
   },
   {
@@ -30,11 +30,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/DSL.vue')
   },
   {
-    path:'/create',
-  name:'create',
-  component: () => import(/* webpackChunkName: "about" */ '../views/CreateAccount.vue')
-  }
+    path:'/signUp',
+    name:'signUp',
+    component:SignUp
   
+  }
 ]
 
 const router = new VueRouter({
@@ -44,3 +44,4 @@ const router = new VueRouter({
 })
 
 export default router
+

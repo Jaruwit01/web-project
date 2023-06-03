@@ -38,7 +38,7 @@
         <!-- Button trigger modal -->
         <p class="text-center border border-dark rounded-3 p-2" 
             id="create-box">
-            New to Camera Box?<router-link to="/create" class="text-success"> Create account</router-link>
+            New to Camera Box?<router-link to="/signUp" class="text-success"> Create account</router-link>
         </p>
 
         <!-- Modal -->

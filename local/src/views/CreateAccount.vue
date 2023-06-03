@@ -95,7 +95,7 @@
             <!-- </router-link> -->
 
             <!-- <router-link to="/member"> -->
-            <button class="btn btn-success me-3" id="create-btn">Create</button>
+            <button class="btn btn-success me-3" id="create-btn" >Create</button>
             <!-- </router-link> -->
           </div>
         </form>
@@ -107,26 +107,25 @@
 <script>
 export default {
   name: "CreateAccount",
-  data() {
-    return {
-      account: "",
-    };
-  },
   methods: {
     Create_account(event) {
       event.preventDefault();
       const formData = new FormData(event.target);
       const formEnt = Object.fromEntries(formData.entries());
 
-      fetch("/api/create", {
+      fetch("/api/signUp", {
         method: "POST",
         body: JSON.stringify(formEnt),
         headers: { "Content-Type": "application/json" },
       })
         .then((response) => response.text())
         .then((result) => {
-          this.account = result;
-          event.target.reset();
+          if(result === 'true') {
+            event.target.reset();
+            alert('Create account success');
+          } else {
+            alert('Create account fail');
+          }
         })
         .catch((err) => alert(err));
     },

@@ -1,10 +1,10 @@
 <template>
   <div class="container main" id="container-addItem">
-    <div class="text-dark fw-bold fs-1 text-center mt-4 mb-1">Add a Camera</div>
+    <div class="text-dark fw-bold fs-1 text-center mt-4 mb-1"></div>
     <div class="card" id="card-addItem">
       <div class="card-body">
-        <p v-if="errorsPresent" class="error text-warning">please fill out both fields!</p>
         <form action="#" @submit.prevent="onSubmit">
+          <p v-if="errorsPresent" class="error text-warning">please fill out both fields!</p>
           <div class="mb-3">
             <div class="from-group">
               <label for="picture" class="form-label">Picture of Camera</label>
@@ -44,7 +44,7 @@
                 </div>
           </div>
           <div class="col-md-6">
-                <button type="submit" class="btn btn-light rounded-3 border " id="btn-submit" formaction="/home/page.html">Submit</button>
+                <button type="submit" class="btn btn-light rounded-3 border bg-success text-white" id="btn-submit" formaction="/home/page.html">Submit</button>
           </div>
           
         </form>
@@ -57,15 +57,13 @@
 export default {
   name: "admin-add",
   props:{
-    item:{
-        type: Object,
+    items:{
         required: false,
         default: () => {
             return {
                 name: "",
                 type: "",
                 details: "",
-                picture: "",
             }
         }
     }
@@ -74,17 +72,17 @@ export default {
         return {
         errorsPresent: false,
         itemValue:{
-          ...this.item
+          ...this.items
         }
         };
     },
     methods: {
         onSubmit: function() {
-            if (this.item.name === "" || this.item.type === "") {
+            if (this.items.name === "" || this.items.type === ""|| this.items.details === "") {
                 this.errorsPresent = true;
             } else {
                 this.errorsPresent = false;
-                this.$emit('createOrUpdate', this.item);
+                this.$emit('createOrUpdate', this.items);
             }
         }
     },

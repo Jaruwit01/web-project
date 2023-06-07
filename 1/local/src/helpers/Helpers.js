@@ -23,5 +23,21 @@ export const api = {
     createItem: handleError(async payload => {
         const res = await axios.post(baseURL, payload)
         return res.data
+    }),
+    getItems: handleError(async () => {
+        const res = await axios.get(baseURL)
+        return res.data
+    }),
+    deleteItem: handleError(async id => {
+        const res = await axios.delete(baseURL + id)
+        return res.data
+    }),
+    getItem: handleError(async id => {
+        const res = await axios.get(baseURL + id)
+        return res.data
+    }),
+    updateItem: handleError(async payload => {
+        const res = await axios.put(baseURL + payload._id, payload)
+        return res.data
     })
 }

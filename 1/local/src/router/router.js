@@ -40,12 +40,23 @@ const routes = [
     path:'/admin-page',
     name:'admin-page',
     component: () => import(/* webpackChunkName: "about" */'../views/AdminPage.vue')
+  },
+  {
+    path:'/admin-page/add-item',
+    name:'add-item',
+    component: () => import(/* webpackChunkName: "about" */'../views/AddItem.vue')
+  },
+  {
+    path:'/admin-page/edit-item/:id',
+    name:'edit-item',
+    component: () => import(/* webpackChunkName: "about" */'../views/EditItem.vue')
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  linkActiveClass:'active',
   routes
 })
 export default router

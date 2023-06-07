@@ -26,9 +26,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Member.vue')
   },
   {
-    path:'/DSL-Camera',
+    path:'/DSLR-Camera',
     name:'DSL-Camera',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DSL.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/DSLR.vue')
   },
   {
     path:'/signUp',
@@ -50,6 +50,36 @@ const routes = [
     path:'/admin-page/edit-item/:id',
     name:'edit-item',
     component: () => import(/* webpackChunkName: "about" */'../views/EditItem.vue')
+  },
+  {
+    path:'/Compact-Camera',
+    name:'Compact-Camera',
+    component: () => import(/* webpackChunkName: "about" */'../views/Compact.vue')
+  },
+  {
+    path:'/Mirrorless-Camera',
+    name:'Mirrorless-Camera',
+    component: () => import(/* webpackChunkName: "about" */'../views/Mirrorless.vue')
+  },
+  {
+    path:'/Film-Camera',
+    name:'Film-Camera',
+    component: () => import(/* webpackChunkName: "about" */'../views/Film.vue')
+  },
+  {
+    path:'/Action-Camera',
+    name:'Action-Camera',
+    component: () => import(/* webpackChunkName: "about" */'../views/Action.vue')
+  },
+  {
+    path:'/Camcorder-Camera',
+    name:'Camcorder-Camera',
+    component: () => import(/* webpackChunkName: "about" */'../views/CamcordersCamera.vue')
+  },
+  {
+    path:'/Instant-Camera',
+    name:'Instant-Camera',
+    component: () => import(/* webpackChunkName: "about" */'../views/InstantCamera.vue')
   }
 ]
 

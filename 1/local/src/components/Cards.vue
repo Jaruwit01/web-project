@@ -1,7 +1,7 @@
 <template>
-     <div class="container main">
-        <div class="container">
-            <div class="card mt-4 " id="card-item" style="width: 18rem;">
+     <div class="container main p-0">
+        <div class="container p-0">
+            <div class="card mt-0 p-0" id="card-item" style="width: 18rem;">
 
                 <slot name="pictur">
 
@@ -33,4 +33,5 @@ export default {
 #card-item img{
     width: 10rem;
 }
+
 </style>

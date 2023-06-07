@@ -17,31 +17,31 @@
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><router-link to="/DSL-Camera" class="dropdown-item" href="#">DSLR</router-link></li>
+                            <li><router-link to="/DSLR-Camera" class="dropdown-item" href="#">DSLR</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Compact</a></li>
+                            <li><router-link to="Compact-Camera" class="dropdown-item" href="#">Compact</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Mirrorless</a></li>
+                            <li><router-link to="/Mirrorless-Camera" class="dropdown-item" href="#">Mirrorless</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Film</a></li>
+                            <li><router-link to="/Film-Camera" class="dropdown-item" href="#">Film</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Instant</a></li>
+                            <li><router-link to="/Instant-Camera" class="dropdown-item" href="#">Instant</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Camcorder</a></li>
+                            <li><router-link to="/Camcorder-Camera" class="dropdown-item" href="#">Camcorder</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><router-link to="/Action-Camera" class="dropdown-item" href="#">Action</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item">

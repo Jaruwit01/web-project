@@ -3,7 +3,7 @@
       <header class="text-center mt-4 fs-1">Camera Item</header>
       <flash-message></flash-message>
       <div v-if="items.length > 0" class="page ">
-        <div v-for="(itemData, i) in items" :key="i" class="card m-3" >
+        <div v-for="(itemData, i) in items" :key="i" class="card m-3 " >
           <Cards>
             <template v-slot:pictur>
               <img />

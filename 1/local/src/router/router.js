@@ -80,6 +80,11 @@ const routes = [
     path:'/Instant-Camera',
     name:'Instant-Camera',
     component: () => import(/* webpackChunkName: "about" */'../views/InstantCamera.vue')
+  },
+  {
+    path:'/Camera-page',
+    name:'Camera-page',
+    component: () => import(/* webpackChunkName: "about" */'../views/CameraPage.vue')
   }
 ]
 

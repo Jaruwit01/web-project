@@ -1,8 +1,8 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary menu">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../public/index.html"><img src="../assets/logo.png"
-                    alt="logo-img" id="logo-img"/></a>
+            <router-link to="/Camera-page" class="navbar-brand" href="../public/index.html"><img src="../assets/logo.png"
+                    alt="logo-img" id="logo-img"/></router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

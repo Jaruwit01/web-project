@@ -1,16 +1,16 @@
 <template>
     <div id="app" >
-      <CameraPage></CameraPage>
+      <Menu></Menu>
         <router-view /> 
     </div>
 </template>
 
 <script>
-import CameraPage from './views/CameraPage.vue'
+import Menu from './components/Menu.vue'
 export default {
   name: 'app',
   components: {
-    CameraPage
+    Menu
   }
 }
 </script>
